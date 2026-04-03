@@ -1,0 +1,28 @@
+ASSIGNMENT - 1
+
+Java works on any computer using the Java Virtual Machine.It is easy to learn and helps create safe and strong programs.
+It can do many tasks at once and has many ready-made tools.
+ADVANTAGES:
+* Runs on any computer using the Java Virtual Machine
+* Easy to learn and use
+* Safe and reliable
+* Can do many tasks at the same time
+* Has many built-in tools (libraries)
+
+
+ASSIGNMENT - 2
+
+package assignments;
+
+public class Day1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		System.out.print("i am ");
+		System.out.print("Good");
+		
+
+	}
+
+}
