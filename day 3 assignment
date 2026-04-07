@@ -1,0 +1,29 @@
+
+
+q no.1
+  
+  import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter first number:");
+        double num1 = sc.nextDouble();
+        System.out.println("Enter second number:");       
+        double num2 = sc.nextDouble();
+        double result = num1 + num2;
+        System.out.println("Total = " + result);
+    }
+}
+   
+
+q no.2
+
+  import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter true or false:");
+        boolean value = sc.nextBoolean();
+        System.out.println("You entered: " + value);
+    }
+}
