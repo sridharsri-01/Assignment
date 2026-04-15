@@ -1,0 +1,53 @@
+package assignment;
+import java.util.Scanner;
+class Employee {
+    int employeeID;
+    String department;
+    String role;
+    public void getSalary() {
+        System.out.println("Salary: 30,000 per month");
+    }
+    public void getTodayTask() {
+        System.out.println("Today's Task: Complete assigned work");
+    }
+    public void displayDetails() {
+        System.out.println("Employee ID: " + employeeID);
+        System.out.println("Department: " + department);
+        System.out.println("Role: " + role);
+    }
+}
+public class OopsConcept2 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Employee emp = new Employee();
+        System.out.println("Enter Employee ID:");
+        emp.employeeID = sc.nextInt();
+        sc.nextLine(); 
+        System.out.println("Enter Department:");
+        emp.department = sc.nextLine();
+        System.out.println("Enter Role:");
+        emp.role = sc.nextLine();
+        System.out.println("\n--- Employee Details ---");
+        emp.displayDetails();
+        emp.getSalary();
+        emp.getTodayTask();
+        sc.close();
+    }
+}
+-------------------------------------------------
+
+output:
+
+Enter Employee ID:
+101
+Enter Department:
+it
+Enter Role:
+developer
+
+--- Employee Details ---
+Employee ID: 101
+Department: it
+Role: developer
+Salary: 30,000 per month
+Today's Task: Complete assigned work
