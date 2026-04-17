@@ -1,0 +1,51 @@
+class Animal {
+    void walk() {
+        System.out.println("Animal is walking");
+    }
+    void sound() {
+        System.out.println("Animal makes sound");
+    }
+}
+class Cat extends Animal {
+    void catSound() {
+        System.out.println("Cat says Meow");
+    }
+}
+public class MainClass {
+    public static void main(String[] args) {
+        Cat c = new Cat();
+        c.walk();
+        c.sound();
+        c.catSound();
+    }
+}
+----------------------------------------------------------------------------------------------------------
+output:
+Animal is walking
+Animal makes sound
+Cat says Meow
+
+--------------------------------------------------------------------------------------------------------------------
+
+q no.2
+1.method overloading
+Method Overloading means using the same method name with different parameters in the same class.
+
+example:
+class A {
+    void add(int a) { System.out.println(a); }
+    void add(int a, int b) { System.out.println(a + b); }
+}
+
+2.method overriding
+same method, but different behaves in child class
+
+example:
+class A {
+    void show() { System.out.println("Parent"); }
+}
+
+class B extends A {
+    void show() { System.out.println("Child"); }
+}
+ 
