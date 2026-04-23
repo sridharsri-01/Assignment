@@ -1,0 +1,36 @@
+q.no 1
+
+import java.util.*;
+public class ListAssignment {
+    public static void main(String[] args) {
+        List<Float> list = new ArrayList<>();
+        list.add(10.5f);
+        list.add(20.2f);
+        list.add(30.3f);
+        list.add(40.4f);
+        list.add(50.5f);
+        for(int i = 0; i < list.size(); i++) {
+            if(i == 1) {
+                System.out.println(list.get(i));
+            }
+        }
+    }
+}
+
+q.no.2
+
+import java.util.*;
+public class SetAssignment {
+    public static void main(String[] args) {
+        Set<Character> set = new TreeSet<>();
+        set.add('b');
+        set.add('a');
+        set.add('c');
+        set.add('a');
+        set.add('b');
+        set.add('d');
+        for(char ch : set) {
+            System.out.println(ch);
+        }
+    }
+}
