@@ -1,0 +1,30 @@
+ q no.1
+
+import java.util.*;
+public class MapAssignment {
+    public static void main(String[] args) {
+        Map<String, Integer> map = new HashMap<>();
+        map.put("Maths", 90);
+        map.put("Science", 85);
+        map.put("English", 88);
+        for(Map.Entry<String, Integer> m : map.entrySet()) {
+            System.out.println(m.getKey() + " : " + m.getValue());
+        }
+    }
+}
+
+q.no.2
+
+public class ExceptionExample {
+    public static void main(String[] args) {
+        try {
+            int a = 10;
+            int b = 0;
+            int result = a / b;   // Error
+            System.out.println(result);
+        } 
+        catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero");
+        }
+    }
+}
