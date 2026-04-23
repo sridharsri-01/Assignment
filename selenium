@@ -1,0 +1,26 @@
+ q no.1
+ 
+CAPTCHA is designed to check human users.It uses images / puzzles / OTP which are hard for automation.Selenium cannot bypass it because it is a security feature.So, CAPTCHA automation is not allowed
+
+q no.2
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.opera.OperaDriver;
+public class OperaExample {
+    public static void main(String[] args) {
+        System.setProperty("webdriver.opera.driver", "path_of_operadriver");
+        WebDriver driver = new OperaDriver();
+        driver.get("https://www.google.com");
+    }
+}
+
+
+q no.3
+
+driver.close() → Closes current browser window only
+driver.quit() → Closes all browser windows and ends sessio
+
+
+q no.4
+WebDriver is an interface
+ChromeDriver is a class (implementation)
+We assign like this:
