@@ -1,0 +1,18 @@
+package assignment;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class TextBoxAutomation {
+    public static void main(String[] args) throws InterruptedException {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.tutorialspoint.com/selenium/practice/text-box.php");
+        driver.manage().window().maximize();
+        driver.findElement(By.id("fullname")).sendKeys("Sridhar");
+        driver.findElement(By.id("email")).sendKeys("sridhar@gmail.com");
+        driver.findElement(By.id("address")).sendKeys("Chennai");
+        driver.findElement(By.id("password")).sendKeys("123456");
+        driver.findElement(By.xpath("//input[@value='Submit']")).click();
+        Thread.sleep(5000); 
+        driver.quit();
+    }
+}
