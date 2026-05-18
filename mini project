@@ -1,0 +1,76 @@
+package assignment;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+public class miniProject {
+    public static void main(String[] args) throws InterruptedException {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
+        driver.manage().window().maximize();
+        Thread.sleep(3000);
+        driver.findElement(
+                By.xpath("//button[contains(text(),'Bank Manager Login')]"))
+                .click();
+        Thread.sleep(2000);
+        driver.findElement(
+                By.xpath("//button[contains(text(),'Add Customer')]"))
+                .click();
+        Thread.sleep(2000);
+        driver.findElement(
+                By.xpath("//input[@placeholder='First Name']"))
+                .sendKeys("Sridhar");
+        driver.findElement(
+                By.xpath("//input[@placeholder='Last Name']"))
+                .sendKeys("K");
+        driver.findElement(
+                By.xpath("//input[@placeholder='Post Code']"))
+                .sendKeys("600001");
+        driver.findElement(
+                By.xpath("//button[@type='submit']"))
+                .click();
+        Alert alert = driver.switchTo().alert();
+        System.out.println("Add Customer Alert : " + alert.getText());
+        alert.accept();
+        Thread.sleep(2000);
+        driver.findElement(
+                By.xpath("//button[contains(text(),'Open Account')]"))
+                .click();
+        Thread.sleep(2000);
+        WebElement customerDropdown =
+                driver.findElement(By.id("userSelect"));
+        Select customer = new Select(customerDropdown);
+        customer.selectByVisibleText("Sridhar K");
+        WebElement currencyDropdown =
+                driver.findElement(By.id("currency"));
+        Select currency = new Select(currencyDropdown);
+        currency.selectByVisibleText("Rupee");
+        driver.findElement(
+                By.xpath("//button[text()='Process']"))
+                .click();
+        Alert alert2 = driver.switchTo().alert();
+        System.out.println("Open Account Alert : " + alert2.getText());
+        alert2.accept();
+        Thread.sleep(2000);
+        driver.findElement(
+                By.xpath("//button[contains(text(),'Customers')]"))
+                .click();
+        Thread.sleep(2000);
+        driver.findElement(
+                By.xpath("//input[@placeholder='Search Customer']"))
+                .sendKeys("Sridhar");
+        Thread.sleep(3000);
+        String customerName = driver.findElement(
+                By.xpath("//table/tbody/tr/td[1]"))
+                .getText();
+        if (customerName.equals("Sridhar")) {
+            System.out.println("Customer Added Successfully");
+        } else {
+            System.out.println("Customer Not Found");
+        }
+        Thread.sleep(5000);
+        driver.quit();
+    }
+}
