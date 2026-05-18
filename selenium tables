@@ -1,0 +1,29 @@
+package assignment;
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class WebTablesAssignment {
+    public static void main(String[] args) throws InterruptedException {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://vinothqaacademy.com/webtable/");
+        driver.manage().window().maximize();
+        Thread.sleep(3000);
+        List<WebElement> rows =
+                driver.findElements(By.xpath("//table/tbody/tr"));
+        System.out.println("Total Rows : " + rows.size());
+        System.out.println("===================================");
+        for (WebElement row : rows) {
+            List<WebElement> cols =
+                    row.findElements(By.tagName("td"));
+            for (WebElement col : cols) {
+                System.out.print(col.getText() + "    ");
+            }
+            System.out.println();
+        }
+        System.out.println("===================================");
+        Thread.sleep(5000);
+        driver.quit();
+    }
+}
