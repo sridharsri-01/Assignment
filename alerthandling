@@ -1,0 +1,36 @@
+package assignment;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class AlertHandlingAssignment {
+
+    public static void main(String[] args) throws InterruptedException {
+
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://vinothqaacademy.com/alert-and-popup/");
+        driver.manage().window().maximize();
+        driver.findElement(By.name("alertbox")).click();
+        Alert simpleAlert = driver.switchTo().alert();
+        System.out.println("Simple Alert Message : " 
+                + simpleAlert.getText());
+        simpleAlert.accept();
+        Thread.sleep(2000);
+        driver.findElement(By.name("confirmalertbox")).click();
+        Alert confirmAlert = driver.switchTo().alert();
+        System.out.println("Confirm Alert Message : " 
+                + confirmAlert.getText());
+        confirmAlert.dismiss();
+        Thread.sleep(2000);
+        driver.findElement(By.name("promptalertbox1234")).click();
+        Alert promptAlert = driver.switchTo().alert();
+        System.out.println("Prompt Alert Message : " 
+                + promptAlert.getText());
+        promptAlert.sendKeys("Sridhar");
+        promptAlert.accept();
+        Thread.sleep(3000);
+        driver.quit();
+    }
+}
