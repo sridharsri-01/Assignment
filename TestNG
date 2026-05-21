@@ -1,0 +1,30 @@
+package asssignment;
+
+import org.testng.annotations.Test;
+
+public class EmployeeFlow {
+
+    @Test(priority = 1)
+    public void EmployeeRegister() {
+
+        System.out.println("Employee Registration Completed");
+    }
+
+    @Test(priority = 2, dependsOnMethods = "EmployeeRegister")
+    public void EmployeeLogin() {
+
+        System.out.println("Employee Login Successful");
+    }
+
+    @Test(priority = 3, dependsOnMethods = "EmployeeLogin")
+    public void EmployeeTask() {
+
+        System.out.println("Employee Task Assigned");
+    }
+
+    @Test(priority = 4, dependsOnMethods = "EmployeeTask")
+    public void EmployeeSalary() {
+
+        System.out.println("Employee Salary Processed");
+    }
+}
