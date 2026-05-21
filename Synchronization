@@ -1,0 +1,36 @@
+package assignment;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class SynchronizationAssignment {
+
+    public static void main(String[] args) {
+
+        WebDriver driver = new ChromeDriver();
+        driver.get("http://uitestingplayground.com/autowait");
+        driver.manage().window().maximize();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebElement applyBtn = wait.until(
+                ExpectedConditions.elementToBeClickable(
+                        By.xpath("//button[contains(text(),'Apply 5s')]")));
+        applyBtn.click();
+        WebElement blueButton = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(
+                        By.id("target")));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        js.executeScript("arguments[0].click();", blueButton);
+
+        System.out.println("Blue Button Clicked Successfully");
+
+        driver.quit();
+    }
+}
