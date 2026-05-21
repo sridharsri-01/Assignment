@@ -1,0 +1,37 @@
+package assignment;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
+
+public class dropDown {
+
+    public static void main(String[] args) throws InterruptedException {
+
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php");
+        driver.manage().window().maximize();
+        WebElement stateDropdown = driver.findElement(By.id("state"));
+        Select state = new Select(stateDropdown);
+        state.selectByVisibleText("NCR");
+        Thread.sleep(2000);
+        WebElement cityDropdown = driver.findElement(By.id("city"));
+        cityDropdown.click();
+        List<WebElement> cityOptions =
+                cityDropdown.findElements(By.tagName("option"));
+        for (WebElement option : cityOptions) {
+
+            if (option.getText().equals("Delhi")) {
+
+                option.click();
+                break;
+            }
+        }
+        Thread.sleep(3000);
+        driver.quit();
+    }
+}
