@@ -1,0 +1,15 @@
+CREATE DATABASE E_Commerce;
+USE E_Commerce;
+CREATE TABLE Amazon (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(100),
+    price DECIMAL(10,2),
+    qty INT
+);
+
+INSERT INTO Amazon VALUES
+(101, 'Laptop', 55000.00, 10),
+(102, 'Mobile', 25000.00, 20),
+(103, 'Headphones', 1500.00, 50);
+
+SELECT * FROM Amazon;
