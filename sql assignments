@@ -1,0 +1,33 @@
+1.
+
+create table students(
+std_id int primary key,
+std_name varchar(50),
+course varchar(50)
+);
+
+create table college(
+std_id int,
+college_id int primary key,
+college_name varchar(50)
+);
+
+ insert into students values(1,'sri','mca'),(2,'praveen','bca'),(3,'dhanush','bcom');
+ insert into college values(1,101,'gnc'),(2,102,'vels'),(3,103,'veltech');
+
+SELECT s.std_id, s.std_name, s.course,
+       c.college_id, c.college_name
+FROM Student2 s
+LEFT JOIN College2 c
+ON s.std_id = c.std_id
+union
+SELECT s.std_id, s.std_name, s.course,c.college_id, c.college_name
+FROM Student2 s
+RIGHT JOIN College2 c
+ON s.std_id = c.std_id;
+
+
+
+2.
+
+SELECT LOWER(SUBSTRING('HELLO WORLD', 7)) AS Output;
