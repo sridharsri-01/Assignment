@@ -1,0 +1,30 @@
+create table students (
+    id int primary key,
+    name varchar(50),
+    subject varchar(50),
+    mark int,
+    course varchar(50)
+);
+
+insert into students values
+(1,'ravi','java',80,'bca'),
+(2,'priya','python',45,'bsc'),
+(3,'kumar','java',60,'bca'),
+(4,'anitha','sql',40,'bcom'),
+(5,'suresh','python',75,'bsc');
+
+select *
+from students
+where mark > (
+    select avg(mark)
+    from students
+);
+
+select *
+from students
+where id in (
+    select id
+    from students
+    where mark > 50
+);
+
