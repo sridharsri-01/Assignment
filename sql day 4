@@ -1,0 +1,1 @@
+select concat('%%', upper(substring_index('Sanjay Kumar',' ',-1)), '%%') as output;
